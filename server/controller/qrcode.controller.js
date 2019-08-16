@@ -7,10 +7,10 @@ const generate = async (req,res,next) => {
     try {
         await qr.toDataURL(text, {errorCorrectionLevel : 'H'}, (err, result)=>{
             if(err){
-                console.log(err)
+                res.json(err)
             }
             else{
-                res.send(result)
+                res.json(result)
             }
         })
       } catch (err) {
